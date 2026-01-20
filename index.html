@@ -4,218 +4,201 @@
 <meta charset="UTF-8">
 <title>Trabajo a Salario Mínimo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#000;
-  --red:#8b0000;
-  --gray:#666;
-  --light:#aaa;
+  --bg:#05070a;
+  --panel:#0d1117;
+  --accent:#1f6feb;
+  --text:#e6edf3;
+  --muted:#8b949e;
 }
 
-*{ box-sizing:border-box; }
+*{box-sizing:border-box}
 
 html,body{
   margin:0;
   padding:0;
   background:var(--bg);
-  color:var(--red);
-  font-family:monospace;
+  color:var(--text);
+  font-family:Inter, sans-serif;
 }
 
-section{
-  padding:80px 20px;
-  max-width:900px;
-  margin:auto;
-}
-
-h1,h2,h3{
-  letter-spacing:5px;
-  margin-bottom:20px;
-}
-
-h1{ font-size:42px; }
-h2{ font-size:22px; }
-h3{ font-size:16px; color:var(--light); }
-
-p{
-  line-height:1.8;
-  color:var(--light);
+header{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at top, #1a0000 0%, #000 60%);
 }
 
 .hero{
   text-align:center;
-  padding-top:120px;
+  max-width:700px;
+  padding:40px;
+}
+
+.hero h1{
+  font-family:"Playfair Display", serif;
+  font-size:56px;
+  margin:0 0 20px;
+  letter-spacing:3px;
 }
 
 .hero p{
-  max-width:600px;
-  margin:30px auto;
+  font-size:18px;
+  line-height:1.8;
+  color:var(--muted);
 }
 
-button{
-  background:transparent;
-  color:var(--red);
-  border:1px solid var(--red);
-  padding:16px 45px;
-  font-size:18px;
+.hero span{
+  display:block;
+  margin-top:30px;
+  font-size:14px;
   letter-spacing:4px;
+  color:var(--accent);
+}
+
+.btn{
+  margin-top:50px;
+  padding:18px 55px;
+  font-size:16px;
+  background:transparent;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  letter-spacing:5px;
   cursor:pointer;
   transition:.3s;
 }
 
-button:hover{
-  background:var(--red);
+.btn:hover{
+  background:var(--accent);
   color:#000;
 }
 
-.quote{
-  border-left:2px solid var(--red);
-  padding-left:20px;
-  margin:30px 0;
-  font-style:italic;
-  color:#bbb;
+section{
+  padding:100px 20px;
 }
 
-.info-grid{
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+.block{
+  background:var(--panel);
+  padding:60px;
+  margin-bottom:60px;
+  border-left:4px solid var(--accent);
+}
+
+.block h2{
+  font-family:"Playfair Display", serif;
+  font-size:28px;
+  margin-top:0;
+}
+
+.block p{
+  line-height:1.9;
+  color:var(--muted);
+}
+
+.quote{
+  font-family:"Playfair Display", serif;
+  font-size:22px;
+  color:var(--text);
+  margin:40px 0;
+}
+
+.grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:40px;
 }
 
-@media(max-width:700px){
-  .info-grid{ grid-template-columns:1fr; }
+.card{
+  background:#0f0f0f;
+  padding:40px;
+  border:1px solid #1f1f1f;
 }
 
-/* glitch leve */
-@keyframes glitch{
-  0%{transform:none}
-  20%{transform:translate(-1px,1px)}
-  40%{transform:translate(1px,-1px)}
-  60%{transform:translate(-1px,0)}
-  80%{transform:translate(1px,1px)}
-  100%{transform:none}
-}
-.glitch{
-  animation:glitch .15s linear 2;
+.card h3{
+  margin-top:0;
+  color:var(--accent);
+  letter-spacing:2px;
 }
 
 footer{
+  padding:60px 20px;
   text-align:center;
-  padding:40px;
-  font-size:11px;
-  color:var(--gray);
+  font-size:12px;
+  color:var(--muted);
+  background:#000;
 }
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <h1>TRABAJO A SALARIO MÍNIMO</h1>
-  <h3>Fredbear’s Family Diner — Halloween 2026</h3>
-
-  <p>
-    Acepté este trabajo por dinero.  
-    Pensé que solo serían turnos nocturnos, cámaras viejas  
-    y un sueldo que apenas alcanzaba.
-  </p>
-
-  <button onclick="window.open('https://docs.google.com/document/d/1zG_joA079RAPZiwom1JtdaCGgA4-btddAY9KG2AO2dI/edit','_blank')">
-    LEER LIBRO
-  </button>
-</section>
-
-<!-- SOBRE EL LIBRO -->
-<section>
-  <h2>SOBRE EL LIBRO</h2>
-
-  <p>
-    <strong>Trabajo a Salario Mínimo</strong> es una historia de terror psicológico
-    ambientada en un restaurante que nunca debió reabrir.
-    Un sistema observa, aprende y decide quién debe quedarse
-    para que todo siga funcionando.
-  </p>
-
-  <div class="quote">
-    “Acepté este trabajo por dinero.<br>
-    Ahora no puedo renunciar.”
+<header>
+  <div class="hero">
+    <h1>TRABAJO A SALARIO MÍNIMO</h1>
+    <p>
+      Un turno nocturno. Un sueldo miserable. 
+      Un restaurante que nunca debió reabrir.
+    </p>
+    <span>Fredbear’s Family Diner</span>
+    <button class="btn" onclick="window.open('https://docs.google.com/document/d/1zG_joA079RAPZiwom1JtdaCGgA4-btddAY9KG2AO2dI/edit','_blank')">LEER LIBRO</button>
   </div>
+</header>
 
-  <p>
-    Esta obra es una reinterpretación independiente.
-    No sigue la cronología oficial.
-    Algunos hechos han sido alterados deliberadamente.
-  </p>
-</section>
-
-<!-- CONTENIDO -->
 <section>
-  <h2>QUÉ ENCONTRARÁS</h2>
+  <div class="container">
 
-  <div class="info-grid">
-    <div>
-      <h3>Terror psicológico</h3>
+    <div class="block">
+      <h2>La historia</h2>
       <p>
-        El miedo no viene de los monstruos,
-        sino de entender demasiado tarde
-        cómo funciona el sistema.
+        Acepté el trabajo porque necesitaba el dinero.
+        Nadie mencionó las desapariciones.
+        Nadie habló de las máquinas.
+        Nadie explicó por qué algunos turnos no terminan nunca.
+      </p>
+      <div class="quote">“Ahora sé que el salario no era lo que estaban pagando.”</div>
+    </div>
+
+    <div class="block">
+      <h2>Qué tipo de libro es</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Terror psicológico</h3>
+          <p>El miedo se construye lentamente, turno tras turno.</p>
+        </div>
+        <div class="card">
+          <h3>Historia cerrada</h3>
+          <p>El final existe. No todos llegan a verlo.</p>
+        </div>
+        <div class="card">
+          <h3>Cronología alternativa</h3>
+          <p>No sigue la versión oficial. Aquí las reglas son otras.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Aviso</h2>
+      <p>
+        Esta obra contiene violencia, muerte y pérdida.
+        No es una historia de héroes.
+        Es una historia de consecuencias.
       </p>
     </div>
 
-    <div>
-      <h3>Personajes atrapados</h3>
-      <p>
-        Nadie es completamente inocente.
-        Nadie sale igual.
-        Algunos se quedan para siempre.
-      </p>
-    </div>
-
-    <div>
-      <h3>Decisiones irreversibles</h3>
-      <p>
-        Cada elección deja algo atrás.
-        A veces, a alguien.
-      </p>
-    </div>
-
-    <div>
-      <h3>Un final cerrado</h3>
-      <p>
-        La historia termina.
-        El sistema no.
-      </p>
-    </div>
   </div>
-</section>
-
-<!-- AVISO -->
-<section>
-  <h2>AVISO AL LECTOR</h2>
-  <p>
-    Esta historia contiene temas de violencia,
-    pérdida y permanencia.
-    No es una historia de redención.
-    Es una historia de consecuencias.
-  </p>
 </section>
 
 <footer>
-  Creado por Aidan · Cronología no oficial<br>
-  El sistema sigue funcionando
+  Creado por Aidan · Obra no oficial<br>
+  Algunos turnos no terminan a las seis
 </footer>
-
-<script>
-setInterval(()=>{
-  if(Math.random()<0.06){
-    document.getElementById("hero").classList.add("glitch");
-    setTimeout(()=>document.getElementById("hero").classList.remove("glitch"),200);
-  }
-},3500);
-</script>
 
 </body>
 </html>
-
