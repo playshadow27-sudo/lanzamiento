@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Trabajo a Salario Mínimo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#000;
+  --red:#8b0000;
+  --gray:#666;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  background:var(--bg);
+  color:var(--red);
+  font-family:monospace;
+}
+
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+#page{
+  max-width:800px;
+  padding:40px;
+  text-align:center;
+  animation:fade 2s ease;
+}
+
+h1{
+  font-size:40px;
+  letter-spacing:6px;
+  margin-bottom:10px;
+}
+
+h2{
+  font-size:13px;
+  letter-spacing:3px;
+  color:var(--gray);
+  margin-bottom:40px;
+}
+
+#intro{
+  font-size:16px;
+  line-height:1.8;
+  margin-bottom:50px;
+}
+
+#intro span{
+  display:block;
+  margin-top:10px;
+}
+
+button{
+  background:transparent;
+  color:var(--red);
+  border:1px solid var(--red);
+  padding:16px 40px;
+  font-size:18px;
+  letter-spacing:4px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  background:var(--red);
+  color:#000;
+}
+
+#footer{
+  margin-top:60px;
+  font-size:11px;
+  color:var(--gray);
+  letter-spacing:2px;
+}
+
+@keyframes fade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* glitch muy leve */
+@keyframes glitch{
+  0%{transform:none}
+  20%{transform:translate(-1px,1px)}
+  40%{transform:translate(1px,-1px)}
+  60%{transform:translate(-1px,0)}
+  80%{transform:translate(1px,1px)}
+  100%{transform:none}
+}
+.glitch{
+  animation:glitch .15s linear 2;
+}
+</style>
+</head>
+
+<body>
+
+<div id="page">
+  <h1>TRABAJO A SALARIO MÍNIMO</h1>
+  <h2>Fredbear’s Family Diner — Halloween 2026</h2>
+
+  <div id="intro">
+    Acepté este trabajo por dinero.<br>
+    Solo tenía que vigilar cámaras.<br>
+    Solo sobrevivir a la noche.
+    <span>
+    Pero algo empezó a observar.<br>
+    Algo que aprendía.<br>
+    Algo que decidió quién debía quedarse.
+    </span>
+  </div>
+
+  <button onclick="window.open('https://docs.google.com/document/d/1Zsr4K1eKVClOmSA_xX9_RjXkjJzYQhOU2KwPM-CpqV0/edit','_blank')">
+    LEER LIBRO
+  </button>
+
+  <div id="footer">
+    Creado por Aidan · Cronología no oficial
+  </div>
+</div>
+
+<script>
+setInterval(()=>{
+  if(Math.random()<0.07){
+    document.getElementById("page").classList.add("glitch");
+    setTimeout(()=>document.getElementById("page").classList.remove("glitch"),200);
+  }
+},3000);
+</script>
+
+</body>
+</html>
