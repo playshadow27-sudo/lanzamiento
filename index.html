@@ -10,6 +10,7 @@
   --bg:#000;
   --red:#8b0000;
   --gray:#666;
+  --light:#aaa;
 }
 
 *{ box-sizing:border-box; }
@@ -17,55 +18,46 @@
 html,body{
   margin:0;
   padding:0;
-  width:100%;
-  height:100%;
   background:var(--bg);
   color:var(--red);
   font-family:monospace;
 }
 
-body{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+section{
+  padding:80px 20px;
+  max-width:900px;
+  margin:auto;
 }
 
-#page{
-  max-width:800px;
-  padding:40px;
-  text-align:center;
-  animation:fade 2s ease;
+h1,h2,h3{
+  letter-spacing:5px;
+  margin-bottom:20px;
 }
 
-h1{
-  font-size:40px;
-  letter-spacing:6px;
-  margin-bottom:10px;
-}
+h1{ font-size:42px; }
+h2{ font-size:22px; }
+h3{ font-size:16px; color:var(--light); }
 
-h2{
-  font-size:13px;
-  letter-spacing:3px;
-  color:var(--gray);
-  margin-bottom:40px;
-}
-
-#intro{
-  font-size:16px;
+p{
   line-height:1.8;
-  margin-bottom:50px;
+  color:var(--light);
 }
 
-#intro span{
-  display:block;
-  margin-top:10px;
+.hero{
+  text-align:center;
+  padding-top:120px;
+}
+
+.hero p{
+  max-width:600px;
+  margin:30px auto;
 }
 
 button{
   background:transparent;
   color:var(--red);
   border:1px solid var(--red);
-  padding:16px 40px;
+  padding:16px 45px;
   font-size:18px;
   letter-spacing:4px;
   cursor:pointer;
@@ -77,19 +69,25 @@ button:hover{
   color:#000;
 }
 
-#footer{
-  margin-top:60px;
-  font-size:11px;
-  color:var(--gray);
-  letter-spacing:2px;
+.quote{
+  border-left:2px solid var(--red);
+  padding-left:20px;
+  margin:30px 0;
+  font-style:italic;
+  color:#bbb;
 }
 
-@keyframes fade{
-  from{opacity:0}
-  to{opacity:1}
+.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
 }
 
-/* glitch muy leve */
+@media(max-width:700px){
+  .info-grid{ grid-template-columns:1fr; }
+}
+
+/* glitch leve */
 @keyframes glitch{
   0%{transform:none}
   20%{transform:translate(-1px,1px)}
@@ -101,43 +99,123 @@ button:hover{
 .glitch{
   animation:glitch .15s linear 2;
 }
+
+footer{
+  text-align:center;
+  padding:40px;
+  font-size:11px;
+  color:var(--gray);
+}
 </style>
 </head>
 
 <body>
 
-<div id="page">
+<!-- HERO -->
+<section class="hero" id="hero">
   <h1>TRABAJO A SALARIO MÍNIMO</h1>
-  <h2>Fredbear’s Family Diner — Halloween 2026</h2>
+  <h3>Fredbear’s Family Diner — Halloween 2026</h3>
 
-  <div id="intro">
-    Acepté este trabajo por dinero.<br>
-    Solo tenía que vigilar cámaras.<br>
-    Solo sobrevivir a la noche.
-    <span>
-    Pero algo empezó a observar.<br>
-    Algo que aprendía.<br>
-    Algo que decidió quién debía quedarse.
-    </span>
-  </div>
+  <p>
+    Acepté este trabajo por dinero.  
+    Pensé que solo serían turnos nocturnos, cámaras viejas  
+    y un sueldo que apenas alcanzaba.
+  </p>
 
-  <button onclick="window.open('https://docs.google.com/document/d/1Zsr4K1eKVClOmSA_xX9_RjXkjJzYQhOU2KwPM-CpqV0/edit','_blank')">
+  <button onclick="window.open('https://docs.google.com/document/d/1zG_joA079RAPZiwom1JtdaCGgA4-btddAY9KG2AO2dI/edit','_blank')">
     LEER LIBRO
   </button>
+</section>
 
-  <div id="footer">
-    Creado por Aidan · Cronología no oficial
+<!-- SOBRE EL LIBRO -->
+<section>
+  <h2>SOBRE EL LIBRO</h2>
+
+  <p>
+    <strong>Trabajo a Salario Mínimo</strong> es una historia de terror psicológico
+    ambientada en un restaurante que nunca debió reabrir.
+    Un sistema observa, aprende y decide quién debe quedarse
+    para que todo siga funcionando.
+  </p>
+
+  <div class="quote">
+    “Acepté este trabajo por dinero.<br>
+    Ahora no puedo renunciar.”
   </div>
-</div>
+
+  <p>
+    Esta obra es una reinterpretación independiente.
+    No sigue la cronología oficial.
+    Algunos hechos han sido alterados deliberadamente.
+  </p>
+</section>
+
+<!-- CONTENIDO -->
+<section>
+  <h2>QUÉ ENCONTRARÁS</h2>
+
+  <div class="info-grid">
+    <div>
+      <h3>Terror psicológico</h3>
+      <p>
+        El miedo no viene de los monstruos,
+        sino de entender demasiado tarde
+        cómo funciona el sistema.
+      </p>
+    </div>
+
+    <div>
+      <h3>Personajes atrapados</h3>
+      <p>
+        Nadie es completamente inocente.
+        Nadie sale igual.
+        Algunos se quedan para siempre.
+      </p>
+    </div>
+
+    <div>
+      <h3>Decisiones irreversibles</h3>
+      <p>
+        Cada elección deja algo atrás.
+        A veces, a alguien.
+      </p>
+    </div>
+
+    <div>
+      <h3>Un final cerrado</h3>
+      <p>
+        La historia termina.
+        El sistema no.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- AVISO -->
+<section>
+  <h2>AVISO AL LECTOR</h2>
+  <p>
+    Esta historia contiene temas de violencia,
+    pérdida y permanencia.
+    No es una historia de redención.
+    Es una historia de consecuencias.
+  </p>
+</section>
+
+<footer>
+  Creado por Aidan · Cronología no oficial<br>
+  El sistema sigue funcionando
+</footer>
 
 <script>
 setInterval(()=>{
-  if(Math.random()<0.07){
-    document.getElementById("page").classList.add("glitch");
-    setTimeout(()=>document.getElementById("page").classList.remove("glitch"),200);
+  if(Math.random()<0.06){
+    document.getElementById("hero").classList.add("glitch");
+    setTimeout(()=>document.getElementById("hero").classList.remove("glitch"),200);
   }
-},3000);
+},3500);
 </script>
 
 </body>
 </html>
+
